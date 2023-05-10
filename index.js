@@ -25,8 +25,11 @@ inquirer.prompt([
 .then((answers) => {
     console.log(answers)
     if(answers.shape === "Triangle"){
-        const userShape = new 
-    }
+        const userShape = new Triangle
+    }if(answers.color === ){
+        const userColor = new color
+    } 
+    
 
 fs.writeFile('logo.svg', data, (err) =>
   err ? console.log(err) : console.log('Successfully created a logo!')
