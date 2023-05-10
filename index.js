@@ -1,8 +1,16 @@
 const inquirer = require("inquirer")
 const fs = require("fs")
-const {Shape, Triangle} = require("./lib/shape")
+const {Shape, Triangle, Circle, Square} = require("./lib/shape")
 
 inquirer.prompt([
+    { type: "input",
+      name: "text",
+      message: "Enter 3 characters"
+    },
+    { type: "input",
+      name: "color",
+      message: "What color wich you like (enter color or hexadecimal #)?"
+    },
     { type: "list",
       name: "shape",
       message: "What shape do you want your SVG?",
@@ -10,25 +18,21 @@ inquirer.prompt([
     },
     { type: "input",
       name: "color",
-      message: "What color do you want your SVG?"
-    },
-    { type: "input",
-      name: "",
-      message: "What shape do you want your SVG?"
-    },
-    { type: "input",
-      name: "shape",
-      message: "What shape do you want your SVG?"
+      message: "What color do you want your shape to be?"
     },
 ])
 
 .then((answers) => {
     console.log(answers)
-    if(answers.shape === "Triangle"){
+    if(answers.Shape === "Triangle"){
         const userShape = new Triangle
-    }if(answers.color === ){
+    }if(answers.Shape === "Circle"){
+        const userShape = new Circle
+    }if(answers.Shape === new Square){
+       const userShape = "Square" 
+    }if(answers.color === color){
         const userColor = new color
-    } 
+    }
     
 
 fs.writeFile('logo.svg', data, (err) =>
